@@ -15,4 +15,5 @@ class Main:
                      return_type:str = 'save',
                      save:str = None):
 
-     rgb_image = utils.process_RGB(get_path)                  
+     rgb_image = utils.process_RGB(get_path) 
+     print               
