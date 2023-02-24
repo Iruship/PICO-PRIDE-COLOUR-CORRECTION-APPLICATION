@@ -16,4 +16,4 @@ class Main:
                      save:str = None):
 
      rgb_image = utils.process_RGB(get_path) 
-     print("hello world")              
+               
