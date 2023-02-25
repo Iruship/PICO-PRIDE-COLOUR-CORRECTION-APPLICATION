@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import imutils
   
-# Replace the below URL with your own. Make sure to add "/shot.jpg" at last.
+# URL to access the camera of the mobile phone. "/shot.jpg" is added at the end.
 url = "http://192.168.125.122:8080/shot.jpg"
   
 # While loop to continuously fetching data from the Url
