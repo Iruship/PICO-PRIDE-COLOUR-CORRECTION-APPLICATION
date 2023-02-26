@@ -34,6 +34,7 @@ class Main:
         assert save is not None , 'Save path is not provided for image!'
         cv2.imwrite(corrected_image,save)
         return
+     
    # Irushi Perera w1867413
    
      
