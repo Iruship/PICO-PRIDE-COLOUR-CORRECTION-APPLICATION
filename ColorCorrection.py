@@ -16,7 +16,7 @@ class Main:
                      degree_of_deutranopia : float = 1.0,
                      return_type:str = 'save',
                      save:str = None):
-
+      #Loading the image file in LMS colour space. 
      rgb_image = LoadImage.process_RGB(get_path)
 
      modify = Modify.colour_correction_matrix(degree_of_deutranopia = degree_of_deutranopia,
