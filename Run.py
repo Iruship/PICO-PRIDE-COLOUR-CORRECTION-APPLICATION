@@ -25,3 +25,6 @@ def main():
                       degree_of_deutranopia=0.5)
     
     return
+
+if __name__ == 'main':
+    main()
