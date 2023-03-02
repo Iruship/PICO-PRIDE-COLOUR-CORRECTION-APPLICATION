@@ -34,7 +34,6 @@ class Main:
         assert save is not None , 'Save path is not provided for image!'
         cv2.imwrite(corrected_image,save)
         return
-<<<<<<< main
   
 def parse_args():
    parse= argparse.ArgumentParser(description = 'Colour Correct Images for Colour-Blindness')
@@ -76,18 +75,3 @@ def main():
 
 if __name__== '__main__':
    main()   
-
-
-
-   
-
-
-   
-     
-    
-    
-=======
->>>>>>> BackEnd
-
-   
-   
