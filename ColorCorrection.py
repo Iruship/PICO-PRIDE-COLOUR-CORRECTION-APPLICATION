@@ -16,6 +16,7 @@ class Main:
                      degree_of_deutranopia : float = 1.0,
                      return_type:str = 'save',
                      save:str = None):
+     
       #Loading the image file in LMS colour space. 
      rgb_image = LoadImage.process_RGB(get_path)
 
@@ -36,16 +37,18 @@ class Main:
         return
   
 def parse_args():
-   parse= argparse.ArgumentParser(description = 'Colour Correct Images for Colour-Blindness')
+   parser= argparse.ArgumentParser(description = 'Colour Correct Images for Colour-Blindness')
 
-   parse.add_argument('input', type =str, help ='input Image path')
-   parse.add_argument('output' , type = str, help = 'Image saving path')
-   parse.add_argument('colours_correct', action = 'true', default=False, help = 'Corrected Image for Protonopia')
-   parse.add_argument('run_all',action = 'true', default='False', help = 'Perform all corrections.' )
-   parse.add_argument('degree_of_protonopia', type = float, default =1.0, help = 'Adjust the degree of protonopia. Default is 1.0')
-   parse.add_argument('degree_of_deutranopia', type = float, default =1.0, help = 'Adjust the degree of deutranopia Default is 1.0')
-
-   args = parse.parse_args()
+   parser.add_argument('-input', type =str, help ='input Image path')
+   parser.add_argument('-output' , type = str, help = 'Image saving path')
+   parser.add_argument('-colours_correct', action = 'store_true', default=False, help = 'Corrected Image for Protonopia')
+   parser.add_argument('-run_all',action = 'store_true', default=False, help = 'Perform all corrections.' )
+   parser.add_argument('-degree_of_protonopia', type = float, default =1.0, 
+                       help = 'Adjust the degree of protonopia. Default is 1.0')
+   parser.add_argument('-degree_of_deutranopia', type = float, default =1.0,
+                        help = 'Adjust the degree of deutranopia Default is 1.0')
+   
+   args = parser.parse_args()
 
    return args
 
@@ -66,7 +69,7 @@ def main():
       if args.colours_correct or run_all:
          Main.correctImage(get_path= get_path,
                            return_type='save',
-                           save= '{}/{}_{}'.format(image_output_path,'colours_correct', name_of_image),
+                           save = '{}/{}_{}'.format(image_output_path,'colours_correct', name_of_image),
                            degree_of_protanopia=args.degree_of_protonopia,
                            degree_of_deutranopia=args.degree_of_deutranopia)
          
@@ -74,7 +77,6 @@ def main():
 
 
 if __name__== '__main__':
-   main()   
+   main()  
 
-print('hi')
-print('irusshi')
+
