@@ -4,6 +4,7 @@ from PIL import Image
 
 class Modify:
 
+
     @staticmethod
     def RGB_TO_LMS():
 
@@ -27,6 +28,7 @@ class Modify:
 
 class LoadImage:
 
+
     @staticmethod
     def process_RGB(path):
         rgb_image = np.array(Image.open(path)) / 255
@@ -35,5 +37,5 @@ class LoadImage:
     @staticmethod
     def process_LMS(path):
         rgb_image = np.array(Image.open(path)) / 255
-        lms_image = np.dot(rgb_image[:,:,:3], Modify.rgb_to_lms())
+        lms_image = np.dot(rgb_image[:,:,:3], Modify.RGB_TO_LMS())
         return lms_image
