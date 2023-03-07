@@ -14,7 +14,7 @@ class Main:
                      degree_of_protanopia : float = 1.0,
                      degree_of_deutranopia : float = 1.0,
                      return_type:str = 'save',
-                     save:str = None):
+                     save_path:str = None):
      
       #Loading the image file in LMS colour space. 
      rgb_image = LoadImage.process_RGB(get_path)
@@ -25,25 +25,30 @@ class Main:
      corrected_image = np.uint8(np.dot(rgb_image,modify)*255)
 
      if return_type == 'save':
-        assert save is not None , 'Save path is not provided for image!'
-        cv2.imwrite(corrected_image,save)
+        assert save_path is not None , 'Save path is not provided for image!'
+        cv2.imwrite(save_path,corrected_image)
         return
      
      if return_type == 'np':
         return corrected_image
      
-     if return_type == 'PIL':
+     if return_type == 'pil':
         return Image.fromarray(corrected_image)
 
     
   
 def parse_args():
-   parser= argparse.ArgumentParser(description = 'Colour Correct Images for Colour-Blindness')
+   parser= argparse.ArgumentParser(
+      description = 'Colour Correct Images for Colour-Blindness')
 
-   parser.add_argument('-input', type =str, help ='input Image path')
-   parser.add_argument('-output' , type = str, help = 'Image saving path')
-   parser.add_argument('-colours_correct', action = 'store_true', default=False, help = 'Corrected Image for Protonopia')
-   parser.add_argument('-run_all',action = 'store_true', default=False, help = 'Perform all corrections.' )
+   parser.add_argument(
+      '-input', type =str, help ='Path to input image.')
+   parser.add_argument(
+      '-output' , type = str, help = 'Path to save the output image dir.')
+   parser.add_argument('-colours_correct', action = 'store_true', default=False, 
+                       help = 'Corrected Image for Protonopia')
+   parser.add_argument('-run_all',action = 'store_true', default=False,
+                        help = 'Perform all corrections.' )
    parser.add_argument('-degree_of_protonopia', type = float, default =1.0, 
                        help = 'Adjust the degree of protonopia. Default is 1.0')
    parser.add_argument('-degree_of_deutranopia', type = float, default =1.0,
@@ -75,7 +80,7 @@ def main():
         if args.colours_correct or run_all:
             Main.correctImage(get_path= get_path,
                                return_type='save',
-                               save = '{}/{}_{}'.format(image_output_path,'colours_correct', name_of_image),
+                               save_path = '{}/{}_{}'.format(image_output_path,'colours_correct', name_of_image),
                                degree_of_protanopia=args.degree_of_protonopia,
                                degree_of_deutranopia=args.degree_of_deutranopia)
 
