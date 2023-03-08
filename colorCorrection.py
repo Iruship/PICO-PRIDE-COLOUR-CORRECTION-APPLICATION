@@ -9,6 +9,8 @@ from utils import Modify,LoadImage
 
 class Main:
 
+   #Function to colour correct images for people with colour blindness types protanopia, deutranopia, or both.
+   #Disclaimer: degree_of_protanopia & degree_of_deutranopia changes from person to person. (This is diagnosed by a doctor using the Isihara test.)
     @staticmethod
     def correctImage(get_path:str,
                      degree_of_protanopia : float = 1.0,
@@ -16,6 +18,12 @@ class Main:
                      return_type_image: str = 'save',
                      save_path: str = None
                      ):
+                     #get_path --> Input path of the image
+                     #degree_of_protanopia --> Protanopia degree
+                     #degree_of_deutranopia --> Deutranopia degree
+                     #return_type_image --> How to return the correctd image. Use 'pil' for PIL.Image , 'np' for Numpy array , 'save' for Saving to path.
+                     #save_path --> Where to save the corrected image if return type is provided as 'save'.
+         
      
         #Loading the image file in LMS colour space. 
          rgb_image = LoadImage.process_RGB(get_path)
@@ -66,12 +74,15 @@ def main():
    
     args = parse_args()
 
+   #Get the input and output path.
     get_path = args.input
     name_of_image = get_path.split('/')[-1]
     image_output_path = args.output
 
+   #Check whether output path is a directory.
     assert os.path.isdir(image_output_path),'Output path should be a Directory.'
 
+   #Setup the run_all flag.
     run_all = False
     if args.run_all:
         run_all = True
