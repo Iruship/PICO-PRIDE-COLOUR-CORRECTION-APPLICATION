@@ -5,8 +5,33 @@ import 'package:login_page_day_23/types.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomePage(),
+    home: LoadingPage(),
   ));
+}
+
+class LoadingPage extends StatefulWidget {
+  @override
+  _LoadingPageState createState() => _LoadingPageState();
+}
+
+class _LoadingPageState extends State<LoadingPage> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 8), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 43, 43, 44),
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
 }
 
 class HomePage extends StatelessWidget {
@@ -58,7 +83,7 @@ class HomePage extends StatelessWidget {
                   FadeAnimation(
                       1.4,
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac ultrices sapien, eget sollicitudin elit. Phasellus tempor ex ultrices feugiat fermentum. Sed sit amet enim sodales, ornare velit vel, volutpat erat. Quisque viverra congue ante at convallis. Suspendisse vitae mauris consectetur nibh eleifend ultrices. Cras eleifend facilisis nibh et finibus. Quisque congue tellus in ipsum accumsan rhoncus. Quisque non purus vel mauris vulputate euismod.",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.grey[700], fontSize: 15),
                       )),
@@ -66,26 +91,6 @@ class HomePage extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
-                  // FadeAnimation(
-                  //     1.5,
-                  //     MaterialButton(
-                  //       minWidth: double.infinity,
-                  //       height: 60,
-                  //       onPressed: () {
-                  //         Navigator.push(
-                  //             context,
-                  //             MaterialPageRoute(
-                  //                 builder: (context) => LoginPage()));
-                  //       },
-                  //       shape: RoundedRectangleBorder(
-                  //           side: BorderSide(color: Colors.black),
-                  //           borderRadius: BorderRadius.circular(50)),
-                  //       child: Text(
-                  //         "Login",
-                  //         style: TextStyle(
-                  //             fontWeight: FontWeight.w600, fontSize: 18),
-                  //       ),
-                  //     )),
                   SizedBox(
                     height: 20,
                   ),
