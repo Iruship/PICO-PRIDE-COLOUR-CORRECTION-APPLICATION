@@ -57,7 +57,7 @@ class TypePage extends StatelessWidget {
             ),
             Positioned(
               left: 30,
-              top: 160,
+              top: 200,
               child: MaterialButton(
                 height: 45,
                 onPressed: () {
@@ -84,7 +84,7 @@ class TypePage extends StatelessWidget {
             ),
             Positioned(
               right: 30,
-              top: 160,
+              top: 200,
               child: MaterialButton(
                 height: 45,
                 onPressed: () {
@@ -111,7 +111,7 @@ class TypePage extends StatelessWidget {
             ),
             Positioned(
               left: 30,
-              top: 410,
+              top: 420,
               child: MaterialButton(
                 height: 45,
                 onPressed: () {
@@ -138,7 +138,7 @@ class TypePage extends StatelessWidget {
             ),
             Positioned(
               right: 30,
-              top: 410,
+              top: 420,
               child: MaterialButton(
                 height: 45,
                 onPressed: () {
