@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void sendPhoto(File photo) async {
+sendPhoto(File photo) async {
   // encode the photo as base64
   String base64Photo = base64Encode(photo.readAsBytesSync());
 

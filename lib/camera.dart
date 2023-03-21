@@ -89,7 +89,7 @@ class _MyPageState extends State<MyPage> {
                 ? SizedBox.shrink()
                 : ElevatedButton(
                     onPressed: () {
-                      sendPhoto();
+                      sendPhoto(imageFile);
                     },
                     child: Text("UPLOAD"),
                   ),
