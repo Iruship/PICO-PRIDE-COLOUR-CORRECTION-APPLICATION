@@ -1,6 +1,10 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+
+import 'images.dart';
 
 class MyPage extends StatefulWidget {
   @override
@@ -84,7 +88,9 @@ class _MyPageState extends State<MyPage> {
             child: imageFile == null
                 ? SizedBox.shrink()
                 : ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      sendPhoto();
+                    },
                     child: Text("UPLOAD"),
                   ),
           ),
