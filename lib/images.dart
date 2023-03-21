@@ -7,7 +7,7 @@ sendPhoto(File photo) async {
   String base64Photo = base64Encode(photo.readAsBytesSync());
 
   // Send an HTTP request to the Flask back-end
-  String url = 'http://your-flask-backend.com/api/upload';
+  String url = 'http://127.0.0.1:8000';
   Map<String, String> headers = {'Content-Type': 'application/json'};
   Map<String, dynamic> body = {'photo': base64Photo};
   http.Response response =
