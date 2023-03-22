@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -9,14 +10,14 @@ class ImageScreen extends StatefulWidget {
 }
 
 class _ImageScreenState extends State<ImageScreen> {
-  String imageUrl;
+  Uint8List imageUrl;
 
   Future<void> getImage() async {
     var response =
         await http.get(Uri.parse('http://192.168.43.121:8000/api/recieve'));
     if (response.statusCode == 200) {
       setState(() {
-        imageUrl = response.body;
+        imageUrl = response.bodyBytes;
       });
     } else {
       throw Exception('Failed to load image');
@@ -38,7 +39,7 @@ class _ImageScreenState extends State<ImageScreen> {
       body: imageUrl == null
           ? Center(child: CircularProgressIndicator())
           : Image.memory(
-              base64Decode(imageUrl.split(',')[1]),
+              imageUrl,
               fit: BoxFit.cover,
             ),
     );

@@ -91,10 +91,12 @@ class _MyPageState extends State<MyPage> {
                 : ElevatedButton(
                     onPressed: () {
                       sendPhoto(imageFile);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ImageScreen()));
+                      Future.delayed(Duration(seconds: 8), () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ImageScreen()));
+                      });
                     },
                     child: Text("UPLOAD"),
                   ),

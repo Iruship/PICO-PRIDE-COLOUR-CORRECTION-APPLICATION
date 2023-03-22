@@ -18,7 +18,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 8), () {
+    Future.delayed(Duration(seconds: 4), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomePage()));
     });
