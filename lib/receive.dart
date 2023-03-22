@@ -12,10 +12,11 @@ class _ImageScreenState extends State<ImageScreen> {
   String imageUrl;
 
   Future<void> getImage() async {
-    var response = await http.get(Uri.parse('http://your-flask-app/image'));
+    var response =
+        await http.get(Uri.parse('http://192.168.43.121:8000/api/recieve'));
     if (response.statusCode == 200) {
       setState(() {
-        imageUrl = 'data:image/jpeg;base64,${base64Encode(response.bodyBytes)}';
+        imageUrl = response.body;
       });
     } else {
       throw Exception('Failed to load image');
