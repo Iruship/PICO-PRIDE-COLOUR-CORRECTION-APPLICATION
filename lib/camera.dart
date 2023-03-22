@@ -3,6 +3,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:login_page_day_23/receive.dart';
 
 import 'images.dart';
 
@@ -90,6 +91,10 @@ class _MyPageState extends State<MyPage> {
                 : ElevatedButton(
                     onPressed: () {
                       sendPhoto(imageFile);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ImageScreen()));
                     },
                     child: Text("UPLOAD"),
                   ),
