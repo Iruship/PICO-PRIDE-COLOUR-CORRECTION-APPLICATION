@@ -3,12 +3,12 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ImageScreen extends StatefulWidget {
+class ImagedScreen extends StatefulWidget {
   @override
-  _ImageScreenState createState() => _ImageScreenState();
+  _ImagedScreenState createState() => _ImagedScreenState();
 }
 
-class _ImageScreenState extends State<ImageScreen> {
+class _ImagedScreenState extends State<ImagedScreen> {
   Uint8List imageUrl;
 
   Future<void> getImage() async {

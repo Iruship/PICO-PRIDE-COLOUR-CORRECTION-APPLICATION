@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_day_23/camera.dart';
 
+import 'dcam.dart';
+
 class TypePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ class TypePage extends StatelessWidget {
                 height: 45,
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MyPage()));
+                      MaterialPageRoute(builder: (context) => MydPage()));
                 },
                 color: Color.fromARGB(255, 255, 255, 255),
                 elevation: 0,
