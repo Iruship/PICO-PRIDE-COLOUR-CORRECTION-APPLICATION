@@ -28,7 +28,7 @@ class _LoadingPageState extends State<LoadingPage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 43, 43, 44),
       body: Center(
-        child: CircularProgressIndicator(),
+        child: Image.asset("assets/pic1.png"),
       ),
     );
   }
