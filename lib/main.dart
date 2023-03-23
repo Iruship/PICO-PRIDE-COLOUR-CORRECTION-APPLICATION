@@ -18,7 +18,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomePage()));
     });
@@ -28,7 +28,7 @@ class _LoadingPageState extends State<LoadingPage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 43, 43, 44),
       body: Center(
-        child: Image.asset("assets/pic1.png"),
+        child: Image.asset("assets/cbl.gif"),
       ),
     );
   }

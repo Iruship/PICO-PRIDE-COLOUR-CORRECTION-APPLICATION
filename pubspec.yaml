@@ -55,7 +55,7 @@ flutter:
     - assets/image1.png
     - assets/image2.png
     - assets/image3.png
-   # - assets/icons/logo.png
+    - assets/cbl.gif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
