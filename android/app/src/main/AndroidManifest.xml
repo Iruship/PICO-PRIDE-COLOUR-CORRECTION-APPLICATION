@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="${applicationName}"
-        android:label="login_page_day_23"
+        android:label="Colour Bliss"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
