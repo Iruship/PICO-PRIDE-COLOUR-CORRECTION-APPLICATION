@@ -32,8 +32,23 @@ class _ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 43, 43, 44),
       appBar: AppBar(
-        title: Text('Image'),
+        elevation: 0,
+        // ignore: deprecated_member_use
+        brightness: Brightness.light,
+        backgroundColor: Color.fromARGB(255, 43, 43, 44),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+        ),
+        title: Text("Corrected Protonopia Image"),
       ),
       body: imageUrl == null
           ? Center(child: CircularProgressIndicator())

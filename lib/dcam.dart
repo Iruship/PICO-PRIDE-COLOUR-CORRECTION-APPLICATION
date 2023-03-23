@@ -91,7 +91,7 @@ class _MydPageState extends State<MydPage> {
                 : ElevatedButton(
                     onPressed: () {
                       sendDPhoto(imageFile);
-                      Future.delayed(Duration(seconds: 8), () {
+                      Future.delayed(Duration(seconds: 5), () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(

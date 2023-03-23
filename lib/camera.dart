@@ -91,7 +91,7 @@ class _MyPageState extends State<MyPage> {
                 : ElevatedButton(
                     onPressed: () {
                       sendPhoto(imageFile);
-                      Future.delayed(Duration(seconds: 8), () {
+                      Future.delayed(Duration(seconds: 5), () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
