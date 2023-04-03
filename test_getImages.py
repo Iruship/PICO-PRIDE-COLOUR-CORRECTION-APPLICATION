@@ -3,12 +3,12 @@ import json
 import pytest
 from PIL import Image
 import base64
-import colorCorrection
+import getImages
 
 
 @pytest.fixture
 def client():
-    with colorCorrection.test_client() as client:
+    with getImages.test_client() as client:
         yield client
 
 
