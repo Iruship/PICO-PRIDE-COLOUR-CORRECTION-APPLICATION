@@ -7,13 +7,15 @@ import getImages
 
 
 @pytest.fixture
-def client():
-    with getImages.test_client() as client:
+def test_index():
+    with getImages.index() as client:
         yield client
 
 
 def test_upload(client):
     # Load the test image
+
+
     with open("test_image.png", "rb") as f:
         img_bytes = f.read()
     img_base64 = base64.b64encode(img_bytes).decode("utf-8")
