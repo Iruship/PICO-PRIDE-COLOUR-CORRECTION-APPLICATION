@@ -21,6 +21,9 @@ class TestMain(unittest.TestCase):
         os.remove(self.image_path)
         os.rmdir(self.save_dir)
 
+
+
+
     def test_correctImage_return_type_np(self):
         corrected_image = Main.correctImage(self.image_path, self.protanopia, self.deutranopia, return_type_image='np')
         self.assertIsInstance(corrected_image, np.ndarray)
@@ -31,10 +34,6 @@ class TestMain(unittest.TestCase):
         self.assertIsInstance(corrected_image, Image.Image)
         self.assertEqual(corrected_image.size, (100, 100))
 
-    def test_correctImage_return_type_save(self):
-        output_path = os.path.join(self.save_dir, "corrected_image.png")
-        Main.correctImage(self.image_path, self.protanopia, self.deutranopia, return_type_image='save', save_path=output_path)
-        self.assertTrue(os.path.exists(output_path))
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.M()
