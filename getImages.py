@@ -4,6 +4,7 @@ from colorCorrection import Main
 
 app = Flask(__name__)
 
+#testing the server
 @app.route("/")
 def index():
     return "testing color bliss server"
@@ -43,7 +44,7 @@ def upload():
                           degree_of_deutranopia=1.0)
 
     
-    ## get conrrected image
+    ## get corrected image
 
     return 'success'
 

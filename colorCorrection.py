@@ -45,7 +45,7 @@ class Main:
             return Image.fromarray(corrected_image)
 
     
-  
+ #parses the command-line arguments passed to the script 
 def parse_args():
    parse= argparse.ArgumentParser(
       description = 'Colour Correct Images for Colour-Blindness')
