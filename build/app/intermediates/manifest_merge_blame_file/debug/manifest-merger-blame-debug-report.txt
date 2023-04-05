@@ -33,7 +33,7 @@
 26-->[androidx.core:core:1.6.0] C:\Users\asus\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 27        android:debuggable="true"
 28        android:icon="@mipmap/ic_launcher"
-29        android:label="login_page_day_23" >
+29        android:label="Colour Bliss" >
 30        <activity
 31            android:name="com.example.login_page_day_23.MainActivity"
 32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
