@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                   FadeAnimation(
                       1.4,
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+                        "Our colour correction app brings a new dimension to your world, enhancing colour perception for those who are colour blind. Download now and see the world in a whole new light ",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.grey[700], fontSize: 15),
                       )),
