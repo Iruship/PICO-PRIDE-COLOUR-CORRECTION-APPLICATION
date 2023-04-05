@@ -36,4 +36,4 @@ class TestMain(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.M()
+    unittest.Main()

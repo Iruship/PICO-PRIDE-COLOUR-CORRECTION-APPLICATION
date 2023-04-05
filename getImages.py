@@ -7,24 +7,28 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "hello"
+    return "testing color bliss server"
 
 @app.route('/api/upload', methods=['POST'])
 def upload():
     # Decode the base64-encoded photo
 
-    photo = request.files['photo']
+    photo = request.json['photo']
     option = request.json['option']
 
     #save photo
-    photo.save(photo.filename)
-
-    # option = "Deutranopia"
-    #photo = base64.b64decode(base64_photo)
     
-    #IMG_DIR = photo.filename
-    IMG_DIR = photo.filename
+    # option = "Deutranopia"
+    photo = base64.b64decode(photo)
 
+    IMG_DIR = 'decoded_image.jpg'
+ 
+    with open(IMG_DIR, 'wb') as f:
+        f.write(photo)
+
+    #IMG_DIR = photo.filename
+    
+    print(option)
 
     if option == "Protanopia":
          Main.correctImage(get_path=IMG_DIR,
@@ -32,7 +36,7 @@ def upload():
                             save_path ='correctedImage.png',
                             degree_of_protanopia=0.9,
                             degree_of_deutranopia=0.0)
-    elif option == "Deutranopia":
+    elif option == "Deuteranophia":
         Main.correctImage(get_path=IMG_DIR,
                           return_type_image='save',
                           save_path='correctedImage.png',
@@ -42,7 +46,13 @@ def upload():
     
     ## get conrrected image
 
+    return 'success'
+
+@app.route('/api/recieve', methods=['GET'])
+def recieve():
+    
     return send_file('correctedImage.png' , mimetype='image/png')
+
 
 
 
