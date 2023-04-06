@@ -4,7 +4,8 @@ Flask
 Flask_Request
 open-cv
 numpy
+argparse
 pytest
-
-
-
+flake8
+pillow
+os
